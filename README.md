@@ -8,3 +8,5 @@ Asciinema brain-calc: https://asciinema.org/a/544015
 Asciinema brain-gcd: https://asciinema.org/a/544027
 
 Asciinema brain-progression: https://asciinema.org/a/544074
+
+Asciinema brain-prime: https://asciinema.org/a/544102
