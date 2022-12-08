@@ -29,7 +29,7 @@ npm link
 ```bash
 brain-even
 ```
-![Asciinema brain-even](C:\Users\danya\OneDrive\Рабочий стол\аскинемы\аскинема1.PNG)(https://asciinema.org/a/543112)
+
 
 * brain-calc game
 
