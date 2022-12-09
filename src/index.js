@@ -18,7 +18,7 @@ const basisOfGame = (taskDescription, task) => {
       console.log('Correct!');
     } else {
       console.log(`'${userResponse}' is wrong answer ;(. Correct answer was '${questionAndResult[1]}'.`);
-      console.log(`Let's try again, ${name}`);
+      console.log(`Let's try again, ${name}!`);
       break;
     }
 
