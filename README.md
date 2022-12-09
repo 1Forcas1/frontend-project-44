@@ -8,25 +8,21 @@
 This repository contains 5 brain games
 
 ## Minimum Requirements
-___
 
 Make sure you have **Node.js** version 13 or higher installed.
 
 ## Setup
-___
 
 ```bash
 make install 
 ```
 ## Installing the package on the system
-___
 
 ```bash
 npm link
 ```
 
 ## Game launch
-___
 
 * brain-even game
 
