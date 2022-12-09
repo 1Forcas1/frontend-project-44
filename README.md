@@ -8,21 +8,25 @@
 This repository contains 5 brain games
 
 ## Minimum Requirements
+___
 
-Make sure you have Node.js version 13 or higher installed.
+Make sure you have **Node.js** version 13 or higher installed.
 
 ## Setup
+___
 
 ```bash
 make install 
 ```
 ## Installing the package on the system
+___
 
 ```bash
 npm link
 ```
 
 ## Game launch
+___
 
 * brain-even game
 
@@ -30,23 +34,28 @@ npm link
 brain-even
 ```
 
+[![asciicast](https://asciinema.org/a/543112.svg)](https://asciinema.org/a/543112)
 
 * brain-calc game
 
 ```bash
 brain-calc
 ```
+[![asciicast](https://asciinema.org/a/544015.svg)](https://asciinema.org/a/544015)
+
 * brain-gcd game
 
 ```bash
 brain-gcd
 ```
+[![asciicast](https://asciinema.org/a/544027.svg)](https://asciinema.org/a/544027)
 
 * brain-prime game
 
 ```bash
 brain-prime
 ```
+[![asciicast](https://asciinema.org/a/544102.svg)](https://asciinema.org/a/544102)
 
 * brain-progression game
 
@@ -54,13 +63,4 @@ brain-prime
 brain-progression
 ```
 
-
-Asciinema brain-even: https://asciinema.org/a/543112
-
-Asciinema brain-calc: https://asciinema.org/a/544015
-
-Asciinema brain-gcd: https://asciinema.org/a/544027
-
-Asciinema brain-progression: https://asciinema.org/a/544074
-
-Asciinema brain-prime: https://asciinema.org/a/544102
+[![asciicast](https://asciinema.org/a/544074.svg)](https://asciinema.org/a/544074)
