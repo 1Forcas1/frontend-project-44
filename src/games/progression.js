@@ -1,30 +1,43 @@
-import basisOfGame from '../index.js';
+import runBasisOfGameAndGameGeneration from '../index.js';
+import { getRandomNumber, getRandomIndex } from '../utils.js';
 
-const progression = () => {
+const minAmountElements = 5;
+const maxAmountElements = 10;
+const minElement = 1;
+const maxElement = 20;
+const minDifference = 1;
+const maxDifference = 10;
+
+const makeProgression = (length, element, step) => {
+  let firstElement = element;
+  const progression = [];
+  progression.push(firstElement);
+  while (progression.length < length) {
+    firstElement += step;
+    progression.push(firstElement);
+  }
+  return progression;
+};
+
+const findMissingNumber = () => {
   const taskDescription = 'What number is missing in the progression?';
 
   const progressionTask = () => {
-    const lengthArray = Math.ceil(Math.random() * (10 - 5) + 5);
-    let elementArray = Math.ceil(Math.random() * 20);
-    const progressionDifference = Math.ceil(Math.random() * (10 - 1) + 1);
+    const progressionLength = getRandomNumber(minAmountElements, maxAmountElements);
+    const element = getRandomNumber(minElement, maxElement);
+    const progressionStep = getRandomNumber(minDifference, maxDifference);
 
-    const array = [];
-    array.push(elementArray);
+    const numberProgression = makeProgression(progressionLength, element, progressionStep);
 
-    while (array.length < lengthArray) {
-      elementArray += progressionDifference;
-      array.push(elementArray);
-    }
-
-    const positionOfHiddenElement = Math.floor(Math.random() * array.length);
-    const result = String(array[positionOfHiddenElement]);
-    array[positionOfHiddenElement] = '..';
-    const question = `Question: ${array.join(' ')}`;
+    const positionOfHiddenElement = getRandomIndex(numberProgression);
+    const result = String(numberProgression[positionOfHiddenElement]);
+    numberProgression[positionOfHiddenElement] = '..';
+    const question = `Question: ${numberProgression.join(' ')}`;
 
     return [question, result];
   };
 
-  basisOfGame(taskDescription, progressionTask);
+  runBasisOfGameAndGameGeneration(taskDescription, progressionTask);
 };
 
-export default progression;
+export default findMissingNumber;

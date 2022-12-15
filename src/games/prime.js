@@ -1,33 +1,37 @@
-import basisOfGame from '../index.js';
+import runBasisOfGameAndGameGeneration from '../index.js';
+import { getRandomNumber } from '../utils.js';
 
-const prime = () => {
+const MIN_NUMBER = 1;
+const MAX_NUMBER = 101;
+
+const isPrime = (number) => {
+  if (number === 1) {
+    return false;
+  } if (number === 2) {
+    return true;
+  }
+
+  for (let i = 2; i < number; i += 1) {
+    if (number % i === 0) {
+      return false;
+    }
+  }
+  return true;
+};
+
+const recognizePrimeNumber = () => {
   const taskDescription = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
   const primeTask = () => {
-    const number = Math.floor(Math.random() * 101);
+    const number = getRandomNumber(MIN_NUMBER, MAX_NUMBER);
 
     const question = `Question: ${number}`;
 
-    let result;
-    if (number === 1) {
-      result = 'no';
-    } else if (number === 2) {
-      result = 'yes';
-    }
-
-    for (let i = 2; i < number; i += 1) {
-      if (number % i === 0) {
-        result = 'no';
-        break;
-      } else {
-        result = 'yes';
-      }
-    }
-
+    const result = isPrime(number) ? 'yes' : 'no';
     return [question, result];
   };
 
-  basisOfGame(taskDescription, primeTask);
+  runBasisOfGameAndGameGeneration(taskDescription, primeTask);
 };
 
-export default prime;
+export default recognizePrimeNumber;

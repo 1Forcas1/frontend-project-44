@@ -1,28 +1,36 @@
-import basisOfGame from '../index.js';
+import runBasisOfGameAndGameGeneration from '../index.js';
+import { getRandomNumber } from '../utils.js';
 
-const gcd = () => {
+const MIN_NUMBER = 1;
+const MAX_NUMBER = 25;
+
+const getGCD = (firstNumber, secondNumber) => {
+  let firstDivisor = firstNumber;
+  let secondDivisor = secondNumber;
+  while (firstDivisor !== secondDivisor) {
+    if (firstDivisor > secondDivisor) {
+      firstDivisor -= secondDivisor;
+    } else {
+      secondDivisor -= firstDivisor;
+    }
+  }
+  return firstDivisor;
+};
+
+const findGreatestCommonDivisor = () => {
   const taskDescription = 'Find the greatest common divisor of given numbers.';
 
   const gcdTask = () => {
-    let firstNumber = Math.ceil(Math.random() * 25);
-    let secondNumber = Math.ceil(Math.random() * 25);
+    const firstNumber = getRandomNumber(MIN_NUMBER, MAX_NUMBER);
+    const secondNumber = getRandomNumber(MIN_NUMBER, MAX_NUMBER);
 
     const question = (`Question: ${firstNumber} ${secondNumber}`);
 
-    while (firstNumber !== secondNumber) {
-      if (firstNumber > secondNumber) {
-        firstNumber -= secondNumber;
-      } else {
-        secondNumber -= firstNumber;
-      }
-    }
-
-    const result = String(firstNumber);
-
+    const result = String(getGCD(firstNumber, secondNumber));
     return [question, result];
   };
 
-  basisOfGame(taskDescription, gcdTask);
+  runBasisOfGameAndGameGeneration(taskDescription, gcdTask);
 };
 
-export default gcd;
+export default findGreatestCommonDivisor;
