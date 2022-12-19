@@ -1,5 +1,7 @@
 import readlineSync from 'readline-sync';
 
+const NUMBER_OF_ROUNDS = 3;
+
 const runBasisOfGameAndGameGeneration = (taskDescription, task) => {
   console.log('Welcome to the Brain Games!');
 
@@ -8,8 +10,7 @@ const runBasisOfGameAndGameGeneration = (taskDescription, task) => {
 
   console.log(taskDescription);
 
-  const numberOfRounds = 3;
-  for (let i = 0; i < numberOfRounds; i += 1) {
+  for (let i = 0; i < NUMBER_OF_ROUNDS; i += 1) {
     const [expression, correctAnswer] = task();
 
     console.log(`Question: ${expression}`);
