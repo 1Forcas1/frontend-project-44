@@ -17,7 +17,7 @@ const calculator = (firstNumber, secondNumber, operation) => {
   return result;
 };
 
-const CalculateValueOfExpression = () => {
+const calculateValueOfExpression = () => {
   const taskDescription = 'What is the result of the expression?';
 
   const calcTask = () => {
@@ -37,4 +37,4 @@ const CalculateValueOfExpression = () => {
   runBasisOfGameAndGameGeneration(taskDescription, calcTask);
 };
 
-export default CalculateValueOfExpression;
+export default calculateValueOfExpression;
